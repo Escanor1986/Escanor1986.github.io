@@ -1,4 +1,7 @@
 // Has to be in the head tag, otherwise a flicker effect will occur.
+/* if (!localStorage.getItem("theme")) {
+  localStorage.setItem("theme", "dark");
+} */
 
 // Toggle through light, dark, and system theme settings.
 let toggleThemeSetting = () => {
@@ -256,7 +259,7 @@ let transTheme = () => {
 let determineThemeSetting = () => {
   let themeSetting = localStorage.getItem("theme");
   if (themeSetting != "dark" && themeSetting != "light" && themeSetting != "system") {
-    themeSetting = "system";
+    themeSetting = "dark"; // Changer "system" en "dark" comme valeur par défaut
   }
   return themeSetting;
 };
