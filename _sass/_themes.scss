@@ -2,187 +2,195 @@
  * Themes
  ******************************************************************************/
 
-@use "sass:color";
+ @use "sass:color";
 
-// Cyberpunk/Neon theme variables - shared between light and dark
-$cyber-accent: #08f7fe;         // cyan néon
-$cyber-accent-alt: #fe53bb;     // magenta néon
-$cyber-organic: #66fcf1;        // vert clair
-$cyber-red: #e23e57;            // rouge sakura
-
-:root {
-  color-scheme: light;
-  
-  // Base colors - Light Mode
-  --global-bg-color: #f8f9fa;
-  --global-sidebar-bg-color: #e9ecef;
-  --global-code-bg-color: rgba(224, 168, 250, 0.1);
-  --global-text-color: #343a40;
-  --global-text-color-light: #495057;
-  
-  // Cyber theme colors - Light Mode
-  --global-theme-color: #9932cc;           // purple (adaptation of neon)
-  --global-hover-color: #7b28a4;           // darker purple
-  --global-hover-text-color: #{$white-color};
-  --global-accent-color: #9932cc;          // purple accent
-  --global-accent-color-alt: #c71585;      // magenta accent
-  --global-organic-color: #20b2aa;         // teal accent
-  --global-inline-code-bg: rgba(224, 34, 34, 0.08);
-  --global-inline-code-text: #c71585;
-  
-  // Structure colors - Light Mode
-  --global-footer-bg-color: #343a40;
-  --global-footer-text-color: #{$grey-color-light};
-  --global-footer-link-color: #{$white-color};
-  --global-distill-app-color: #{$grey-color};
-  --global-divider-color: rgba(0, 0, 0, 0.1);
-  --global-card-bg-color: #{$white-color};
-  --global-highlight-color: #{$red-color-dark};
-  --global-back-to-top-bg-color: rgba(
-    #{color.channel($black-color, "red", $space: rgb)},
-    #{color.channel($black-color, "green", $space: rgb)},
-    #{color.channel($black-color, "blue", $space: rgb)},
-    0.4
-  );
-  --global-back-to-top-text-color: #{$white-color};
-  --global-newsletter-bg-color: #{$white-color};
-  --global-newsletter-text-color: #{$black-color};
-
-  // Font settings
-  --body-font-family: "Inter", system-ui, -apple-system, "Segoe UI", "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
-  --mono-font-family: "Major Mono Display", Menlo, Consolas, monospace;
-
-  // Block settings
-  --global-tip-block: #42b983;
-  --global-tip-block-bg: #e2f5ec;
-  --global-tip-block-text: #215d42;
-  --global-tip-block-title: #359469;
-  --global-warning-block: #e7c000;
-  --global-warning-block-bg: #fff8d8;
-  --global-warning-block-text: #6b5900;
-  --global-warning-block-title: #b29400;
-  --global-danger-block: #c00;
-  --global-danger-block-bg: #ffe0e0;
-  --global-danger-block-text: #600;
-  --global-danger-block-title: #c00;
-
-  // Toggle display
-  #light-toggle-system {
-    padding-left: 10px;
-    padding-top: 12px;
-    display: block;
-  }
-  #light-toggle-dark {
-    display: none;
-  }
-  #light-toggle-light {
-    display: none;
-  }
-  .only-light {
-    display: block;
-  }
-  .only-dark {
-    display: none;
-  }
-
-  // Back to top button
-  #back-to-top {
-    color: var(--global-back-to-top-text-color);
-    background: var(--global-back-to-top-bg-color);
-    bottom: $back-to-top-bottom;
-    right: $back-to-top-right;
-    height: $back-to-top-height;
-    width: $back-to-top-width;
-    z-index: $back-to-top-z-index;
-  }
-}
-
-// Dark mode - Cyberpunk Theme
-html[data-theme="dark"] {
-  color-scheme: dark;
-  
-  // Base colors - Dark Mode
-  --global-bg-color: #0b0c10;            // dark blue-black
-  --global-sidebar-bg-color: #131415;    // dark sidebar
-  --global-code-bg-color: #1f2833;       // dark code bg
-  --global-text-color: #c5c6c7;          // light gray text
-  --global-text-color-light: #adb5bd;    // lighter gray
-  
-  // Cyber theme colors - Dark Mode
-  --global-theme-color: #{$cyber-accent};       // cyan neon
-  --global-hover-color: #{$cyber-organic};      // teal-green
-  --global-hover-text-color: #{$black-color};
-  --global-accent-color: #{$cyber-accent};      // cyan neon
-  --global-accent-color-alt: #{$cyber-accent-alt}; // magenta neon
-  --global-organic-color: #{$cyber-organic};    // teal-green
-  --global-inline-code-bg: rgba(238, 34, 34, 0.1);
-  --global-inline-code-text: #{$cyber-red};
-  
-  // Structure colors - Dark Mode
-  --global-footer-bg-color: #171a1d;      // very dark footer
-  --global-footer-text-color: #c5c6c7;    // light text
-  --global-footer-link-color: #{$cyber-accent};
-  --global-distill-app-color: #{$grey-color-light};
-  --global-divider-color: #2c3e50;         // divider color
-  --global-card-bg-color: #1f2833;         // card background
-  --global-highlight-color: #{$cyber-accent-alt};
-  --global-back-to-top-bg-color: rgba(8, 247, 254, 0.5);
-  --global-back-to-top-text-color: #{$black-color};
-  --global-newsletter-bg-color: #1f2833;
-  --global-newsletter-text-color: #c5c6c7;
-
-  // Block settings
-  --global-tip-block: #{$cyber-organic};
-  --global-tip-block-bg: rgba(102, 252, 241, 0.15);
-  --global-tip-block-text: #c5c6c7;
-  --global-tip-block-title: #{$cyber-organic};
-  --global-warning-block: #f0ad4e;
-  --global-warning-block-bg: rgba(240, 173, 78, 0.15);
-  --global-warning-block-text: #c5c6c7;
-  --global-warning-block-title: #f0ad4e;
-  --global-danger-block: #{$cyber-accent-alt};
-  --global-danger-block-bg: rgba(254, 83, 187, 0.15);
-  --global-danger-block-text: #c5c6c7;
-  --global-danger-block-title: #{$cyber-accent-alt};
-
-  // Toggle visibility
-  .only-light {
-    display: none;
-  }
-  .only-dark {
-    display: block;
-  }
-}
-
-// Theme setting overrides
-html[data-theme-setting="dark"] {
-  #light-toggle-system {
-    display: none;
-  }
-  #light-toggle-dark {
-    padding-left: 10px;
-    padding-top: 12px;
-    display: block;
-  }
-  #light-toggle-light {
-    display: none;
-  }
-  #back-to-top {
-    color: var(--global-back-to-top-text-color);
-    background: var(--global-back-to-top-bg-color);
-  }
-}
-
-html[data-theme-setting="light"] {
-  #light-toggle-system {
-    display: none;
-  }
-  #light-toggle-dark {
-    display: none;
-  }
-  #light-toggle-light {
-    padding-left: 10px;
-    padding-top: 12px;
-    display: block;
-  }
-}
+ // Demon Slayer x Ghost in the Shell theme variables - Dark mode
+ $demon-primary: #1a1a2e;       // Deep dark blue (background)
+ $demon-accent: #16f2b3;        // Teal/green accent (like Tomioka's uniform or Ghost in the Shell interface)
+ $demon-accent-alt: #ec243c;    // Red accent (like Tanjiro's earrings)
+ $demon-tech: #5d25cc;          // Purple accent (Ghost in the Shell tech elements)
+ $demon-text: #d3d3df;          // Light blue-tinted text
+ 
+ // Sakura Nihon x Pastel theme variables - Light mode
+ $sakura-primary: #fff9fa;      // Almost white with pink tint (background)
+ $sakura-accent: #db869b;       // Soft cherry blossom pink 
+ $sakura-accent-dark: #d45271;  // Slightly deeper pink for hover states
+ $sakura-leaf: #c1e7bf;         // Soft green (spring leaves)
+ $sakura-branch: #7d5a50;       // Soft brown (cherry tree branches)
+ 
+ :root {
+   color-scheme: light;
+   
+   // Base colors - Light Mode (Sakura Nihon x Pastel)
+   --global-bg-color: #{$sakura-primary};
+   --global-sidebar-bg-color: #{lighten($sakura-accent, 15%)};
+   --global-code-bg-color: rgba(249, 173, 192, 0.1);
+   --global-text-color: #5d5058;
+   --global-text-color-light: #8c7a80;
+   
+   // Theme colors - Light Mode
+   --global-theme-color: #{$sakura-accent};
+   --global-hover-color: #{$sakura-accent-dark};
+   --global-hover-text-color: #{$sakura-primary};
+   --global-accent-color: #{$sakura-accent};
+   --global-accent-color-alt: #{$sakura-branch};
+   --global-organic-color: #{$sakura-leaf};
+   --global-inline-code-bg: rgba(232, 139, 156, 0.08);
+   --global-inline-code-text: #{$sakura-branch};
+   
+   // Structure colors - Light Mode
+   --global-footer-bg-color: #7d5a5033;
+   --global-footer-text-color: #{$sakura-branch};
+   --global-footer-link-color: #{darken($sakura-accent-dark, 15%)};
+   --global-distill-app-color: #8c7a80;
+   --global-divider-color: rgba(125, 90, 80, 0.1);
+   --global-card-bg-color: #{lighten($sakura-primary, 2%)};
+   --global-highlight-color: #{$sakura-accent-dark};
+   --global-back-to-top-bg-color: rgba(
+     #{color.channel($sakura-accent, "red", $space: rgb)},
+     #{color.channel($sakura-accent, "green", $space: rgb)},
+     #{color.channel($sakura-accent, "blue", $space: rgb)},
+     0.8
+   );
+   --global-back-to-top-text-color: #{$sakura-primary};
+   --global-newsletter-bg-color: #{lighten($sakura-primary, 2%)};
+   --global-newsletter-text-color: #5d5058;
+ 
+   // Font settings
+   --body-font-family: "Inter", "Hiragino Kaku Gothic Pro", "Yu Gothic", Meiryo, sans-serif;
+   --mono-font-family: "Major Mono Display", Menlo, Consolas, monospace;
+ 
+   // Block settings
+   --global-tip-block: #{$sakura-leaf};
+   --global-tip-block-bg: #{lighten($sakura-leaf, 10%)};
+   --global-tip-block-text: #{darken($sakura-leaf, 30%)};
+   --global-tip-block-title: #{darken($sakura-leaf, 20%)};
+   --global-warning-block: #ffd6ba;
+   --global-warning-block-bg: #fff8f4;
+   --global-warning-block-text: #a86032;
+   --global-warning-block-title: #c27d48;
+   --global-danger-block: #{$sakura-accent-dark};
+   --global-danger-block-bg: #{lighten($sakura-accent, 10%)};
+   --global-danger-block-text: #{darken($sakura-accent-dark, 25%)};
+   --global-danger-block-title: #{darken($sakura-accent-dark, 15%)};
+ 
+   // Toggle display
+   #light-toggle-system {
+     padding-left: 10px;
+     padding-top: 12px;
+     display: block;
+   }
+   #light-toggle-dark {
+     display: none;
+   }
+   #light-toggle-light {
+     display: none;
+   }
+   .only-light {
+     display: block;
+   }
+   .only-dark {
+     display: none;
+   }
+ 
+   // Back to top button
+   #back-to-top {
+     color: var(--global-back-to-top-text-color);
+     background: var(--global-back-to-top-bg-color);
+     bottom: $back-to-top-bottom;
+     right: $back-to-top-right;
+     height: $back-to-top-height;
+     width: $back-to-top-width;
+     z-index: $back-to-top-z-index;
+   }
+ }
+ 
+ // Dark mode - Demon Slayer x Ghost in the Shell Theme
+ html[data-theme="dark"] {
+   color-scheme: dark;
+   
+   // Base colors - Dark Mode
+   --global-bg-color: #{$demon-primary};
+   --global-sidebar-bg-color: #252547;
+   --global-code-bg-color: #0d1d26;
+   --global-text-color: #{$demon-text};
+   --global-text-color-light: #a3a3cf;
+   
+   // Theme colors - Dark Mode
+   --global-theme-color: #{$demon-accent};
+   --global-hover-color: #{darken($demon-accent, 10%)};
+   --global-hover-text-color: #{$demon-text};
+   --global-accent-color: #{$demon-accent};
+   --global-accent-color-alt: #{$demon-accent-alt};
+   --global-organic-color: #{$demon-tech};
+   --global-inline-code-bg: rgba(22, 242, 179, 0.15);
+   --global-inline-code-text: #{lighten($demon-accent, 10%)};
+   
+   // Structure colors - Dark Mode
+   --global-footer-bg-color: #10101e;
+   --global-footer-text-color: #{$demon-text};
+   --global-footer-link-color: #{$demon-accent};
+   --global-distill-app-color: #a3a3cf;
+   --global-divider-color: #2c3e77;
+   --global-card-bg-color: #22223a;
+   --global-highlight-color: #{$demon-accent-alt};
+   --global-back-to-top-bg-color: rgba(22, 242, 179, 0.7);
+   --global-back-to-top-text-color: #{$demon-primary};
+   --global-newsletter-bg-color: #22223a;
+   --global-newsletter-text-color: #{$demon-text};
+ 
+   // Block settings
+   --global-tip-block: #{$demon-accent};
+   --global-tip-block-bg: rgba(22, 242, 179, 0.15);
+   --global-tip-block-text: #{$demon-text};
+   --global-tip-block-title: #{lighten($demon-accent, 10%)};
+   --global-warning-block: #7b68ee;
+   --global-warning-block-bg: rgba(123, 104, 238, 0.15);
+   --global-warning-block-text: #{$demon-text};
+   --global-warning-block-title: #9c8df3;
+   --global-danger-block: #{$demon-accent-alt};
+   --global-danger-block-bg: rgba(236, 36, 60, 0.15);
+   --global-danger-block-text: #{$demon-text};
+   --global-danger-block-title: #{lighten($demon-accent-alt, 10%)};
+ 
+   // Toggle visibility
+   .only-light {
+     display: none;
+   }
+   .only-dark {
+     display: block;
+   }
+ }
+ 
+ // Theme setting overrides
+ html[data-theme-setting="dark"] {
+   #light-toggle-system {
+     display: none;
+   }
+   #light-toggle-dark {
+     padding-left: 10px;
+     padding-top: 12px;
+     display: block;
+   }
+   #light-toggle-light {
+     display: none;
+   }
+   #back-to-top {
+     color: var(--global-back-to-top-text-color);
+     background: var(--global-back-to-top-bg-color);
+   }
+ }
+ 
+ html[data-theme-setting="light"] {
+   #light-toggle-system {
+     display: none;
+   }
+   #light-toggle-dark {
+     display: none;
+   }
+   #light-toggle-light {
+     padding-left: 10px;
+     padding-top: 12px;
+     display: block;
+   }
+ }
