@@ -1,14 +1,16 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - Escanor1986
 
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - Escanor1986/Cha_Top_Back
+  - Escanor1986/Piicante
+  - Escanor1986/Telesport
+  - Escanor1986/Spring_Tennis
+  - Escanor1986/WaveTides
+  - Escanor1986/Vacations_RBNB_Rentals
+  - Escanor1986/veille_techno-OC
+  - Escanor1986/Page_produit_site_e_commerce
+  - Escanor1986/Kanap_Site_ECommerce
+  - Escanor1986/Calculatrice-en-TypeScript-avec-Tailwind
