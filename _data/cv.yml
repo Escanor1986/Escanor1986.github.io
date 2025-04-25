@@ -1,97 +1,101 @@
-- title: General Information
+
+# Personal details - type map is used for a list of key-value
+- title: Informations générales
   type: map
   contents:
-    - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
-    - name: Languages
-      value: English, German
+    - name: Nom complet
+      value: Lionel ZOVI
+    - name: Email
+      value: lionel.zovi@gmail.com
+    - name: GitHub
+      value: https://github.com/Escanor1986
+    - name: LinkedIn
+      value: https://www.linkedin.com/in/lionelzovi/
+    - name: Langues
+      value: Français (natif), Anglais (professionnel), Néerlandais (intermédiaire), Italien (intermédiaire)
 
-- title: Education
+# Education - time_table type organizes items by time
+- title: Formation
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: Expert Full-stack Java & Angular
+      institution: OpenClassrooms (Online)
+      year: 2025
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
+        - Expert en développement full-stack Java et Angular, design et qualité logicielle.
+    - title: Full-stack Developer React (TS) & Node.js
+      institution: NX Academy (Online)
+      year: 2023–2024
       description:
-        - Description 1.
-        - Description 2.
+        - Création d'applications full-stack avec TypeScript, React et Node.js.
+    - title: Web Developer
+      institution: OpenClassrooms (Online)
+      year: 2022–2023
+      description:
+        - Développement frontend et backend avec JavaScript.
+    - title: Bachelor de Bio-Ingénierie (1ère année)
+      institution: Gembloux Agro-Bio Tech – ULG
+      year: 2018–2019
+      description: []
+    - title: Bachelor de Psychologie (1ère année)
+      institution: ULG Sart-Tilman
+      year: 2011–2012
+      description: []
 
-- title: Experience
+# Experience - time_table type organizes items by time
+- title: Expérience professionnelle
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: Software Developer & Open-source Contributor
+      institution: NX Academy
+      year: 2023–Présent
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
+        - Contribution à la plateforme d'apprentissage Astro.js.
+        - Développement et maintenance de composants, optimisation UX.
+    - title: Full-stack Developer
+      institution: OpenClassrooms & Projets personnels
+      year: 2021–Présent
       description:
-        - Description 1.
-        - Description 2.
-
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
+        - Conception d'API et interfaces avec React, Node.js, MongoDB.
+        - Mise en place de pipelines CI/CD via GitHub Actions.
+    - title: Police Officer
+      institution: Police Department
+      year: 2007–Présent
       description:
+        - Maintien de la sécurité publique, formation des agents.
+        - Rédaction de rapports détaillés et gestion du stress opérationnel.
 
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
-
-- title: Open Source Projects
+# Open Source Projects - time_table type
+- title: Projets open source
   type: time_table
   contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+    - title: Cha_Top_Back
+      year: 2022
+      description: Backend d'une application de topographies.
+      link: https://github.com/Escanor1986/Cha_Top_Back
+    - title: Vacations_RBNB_Rentals
+      year: 2021
+      description: Plateforme de location de vacances sécurisée en Java/Spring Boot.
+      link: https://github.com/Escanor1986/Vacations_RBNB_Rentals
+    - title: Waver
+      year: 2021
+      description: Application de réseau social avec Node.js, Express et Pug.
+      link: https://github.com/Escanor1986/WaveTides
 
-- title: Honors and Awards
+# Awards - time_table type for a compact list
+- title: Distinctions
   type: time_table
   contents:
-    - year: 1921
+    - year: 2025
       items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
+        - Badge « Expert Full-stack Java & Angular » (OpenClassrooms)
+    - year: 2024
       items:
-        - Max Planck Medal
+        - Certification NX Academy React & Node.js
 
-- title: Academic Interests
-  type: nested_list
-  contents:
-    - title: Topic 1.
-      items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
-      items:
-        - Description 1.
-        - Description 2.
-
-- title: Other Interests
+# Interests - list type for simple bullet points
+- title: Centres d'intérêt
   type: list
   contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - Technologies - JavaScript, TypeScript, Java, C++, Cloud, DevOps
+    - Loisirs - Randonnée, Photographie, Lecture, Jeux vidéo
