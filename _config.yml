@@ -3,25 +3,25 @@
 # -----------------------------------------------------------------------------
 
 title: blank # the website title (if blank, full name will be used instead)
-first_name: You
-middle_name: R.
-last_name: Name
+first_name: Lionel
+middle_name: E.
+last_name: Zovi
 contact_note: >
-  You can even add a little note about which of these is the best way to reach you.
+ Email : lionel.zovi@gmail.com
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+  Développeur Fullstack Java/Angular passionné, spécialisé dans
+  le développement d'applications web modernes, scalables et performantes.
 footer_text: >
-  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
-  Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-  Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
-keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
-lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+   Propulsé par <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> et <a href="https://github.com/alshedivat/al-folio" target="_blank">al-folio</a>
+keywords: jekyll, jekyll-theme, academic-website, portfolio-website, fullstack, java, angular, développement web, portfolio, frontend, backend, javascript, fullstack, DevOps, Docker, Kubernetes, React, Node.js, TypeScript, MongoDB, PostgreSQL, microservices, CI/CD, cloud # add your own keywords or leave empty
+lang: fr # the language of your site (for example: en, fr, cn, ru, etc.)
+icon: 🧑‍💻 # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
-url: https://alshedivat.github.io # the base hostname & protocol for your site
-baseurl: /al-folio # the subpath of your site, e.g. /blog/. Leave blank for root
-last_updated: false # set to true if you want to display last updated in the footer
-impressum_path: # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
+repository: https://github.com/Escanor1986/Escanor1986.github.io # the base repository for your site
+url: https://escanor1986.github.io # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog/. Leave blank for root
+last_updated: true # set to true if you want to display last updated in the footer
+impressum_path: "" # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
 back_to_top: true # set to false to disable the back to top button
 
 # -----------------------------------------------------------------------------
@@ -60,6 +60,13 @@ max_width: 930px
 
 # TODO: add layout settings (single page vs. multi-page)
 
+
+enable_navbar_search: true
+enable_navbar_breadcrumbs: true
+enable_navbar_logo: true
+enable_navbar_title: true
+enable_navbar_title_link: true
+
 # -----------------------------------------------------------------------------
 # Open Graph & Schema.org
 # -----------------------------------------------------------------------------
@@ -87,49 +94,62 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # -----------------------------------------------------------------------------
 # Blog
 # -----------------------------------------------------------------------------
+blog_name: "Journal de développement"       # Nom affiché en haut de la page /blog/
+blog_description: "Réflexions, tutoriels et retours d’expérience sur le développement web et DevOps."  
+# –> Court résumé sous le titre du blog
 
-blog_name: al-folio # blog_name will be displayed in your blog page
-blog_description: a simple whitespace theme for academics
-permalink: /blog/:year/:title/
-lsi: false # produce an index for related posts
+# URL des articles
+permalink: /blog/:year/:month/:day/:title/   # Ajoute la date complète dans l’URL (optionnel)
+# Exemples alternatifs :
+#   /blog/:year/:title/      → année + titre
+#   /:categories/:title/     → catégorie + titre
+
+lsi: false                 # LSI (Latent Semantic Indexing) souvent désactivé pour accélérer
+# Si vous voulez des articles « similaires » basés sur le contenu,
+# passez à true et générez l’index via `jekyll build --lsi`
 
 # Pagination
 pagination:
-  enabled: true
+  enabled: true            # affiche plusieurs pages /blog/page2, page3…
+  per_page: 5              # nombre d’articles par page (par défaut 10)
 
+# Articles liés
 related_blog_posts:
-  enabled: true
-  max_related: 5
+  enabled: true            # affiche, en bas de chaque article, des liens vers des posts similaires
+  max_related: 3           # nombre de suggestions
+
 
 # Giscus comments (RECOMMENDED)
 # Follow instructions on https://giscus.app/ to setup for your repo to fill out the information below.
 giscus:
-  repo: # <your-github-user-name>/<your-github-repo-name>
-  repo_id: # leave empty or specify your repo_id (see https://giscus.app/)
+  src: https://giscus.app/client.js # leave as is
+  repo: Escanor1986/Escanor1986.github.io # <your-github-user-name>/<your-github-repo-name>
+  repo_id: R_kgDOOfbtvg # leave empty or specify your repo_id (see https://giscus.app/)
   category: Comments # name of the category under which discussions will be created
-  category_id: # leave empty or specify your category_id (see https://giscus.app/)
-  mapping: title # identify discussions by post title
+  category_id: DIC_kwDOOfbtvs4CpdEn # leave empty or specify your category_id (see https://giscus.app/)
+  mapping: pathname # identify discussions by post title
   strict: 1 # use strict identification mode
   reactions_enabled: 1 # enable (1) or disable (0) emoji reactions
   input_position: bottom # whether to display input form below (bottom) or above (top) the comments
   theme: preferred_color_scheme # name of the color scheme (preferred works well with al-folio light/dark mode)
   emit_metadata: 0
+  crossorigin: anonymous
   lang: en
 
 # Disqus comments (DEPRECATED)
-disqus_shortname: al-folio # put your disqus shortname
+# disqus_shortname: al-folio # put your disqus shortname
 # https://help.disqus.com/en/articles/1717111-what-s-a-shortname
 
 # External sources.
 # If you have blog posts published on medium.com or other external sources,
 # you can display them in your blog by adding a link to the RSS feed.
-external_sources:
-  - name: medium.com
-    rss_url: https://medium.com/@al-folio/feed
-  - name: Google Blog
-    posts:
-      - url: https://blog.google/technology/ai/google-gemini-update-flash-ai-assistant-io-2024/
-        published_date: 2024-05-14
+# external_sources:
+#   - name: medium.com
+#     rss_url: https://medium.com/@al-folio/feed
+#   - name: Google Blog
+#     posts:
+#       - url: https://blog.google/technology/ai/google-gemini-update-flash-ai-assistant-io-2024/
+#         published_date: 2024-05-14
 
 # -----------------------------------------------------------------------------
 # Newsletter
@@ -147,10 +167,6 @@ newsletter:
 collections:
   books:
     output: true
-  news:
-    defaults:
-      layout: post
-    output: true
   projects:
     output: true
 
@@ -159,16 +175,16 @@ collections:
 # -----------------------------------------------------------------------------
 
 # Markdown and syntax highlight
-markdown: kramdown
-highlighter: rouge
+markdown: kramdown # use kramdown as the markdown engine
+highlighter: rouge # use rouge as the syntax highlighter
 kramdown:
-  input: GFM
+  input: GFM # use GitHub Flavored Markdown
   syntax_highlighter_opts:
-    css_class: "highlight"
+    css_class: "highlight" # class for the syntax highlighter
     span:
-      line_numbers: false
+      line_numbers: false # show line numbers
     block:
-      line_numbers: false
+      line_numbers: false # show line numbers
       start_line: 1
 
 # Includes & excludes
@@ -217,8 +233,18 @@ plugins:
   - jekyll-twitter-plugin
   - jemoji
 
-# Sitemap settings
+
+# -----------------------------------------------------------------------------
+# Default values for collections, layouts, etc.
+# -----------------------------------------------------------------------------
 defaults:
+  # → Valeurs par défaut pour tous les posts
+  - scope:
+      path: ""      # affecte l’ensemble du site, ou met "_posts" pour être plus précis
+      type: "posts" # toutes les ressources de type post
+    values:
+      giscus_comments: true   # injecte automatiquement Giscus dans chaque post
+  # Sitemap settings
   - scope:
       path: "assets"
     values:
@@ -257,79 +283,41 @@ jekyll-archives:
   books:
     enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
 
-display_tags: ["formatting", "images", "links", "math", "code", "blockquotes"] # these tags will be displayed on the front page of your blog
-display_categories: ["external-services"] # these categories will be displayed on the front page of your blog
+display_tags: ["javascript", "devops", "typescript", "docker"]
+# these tags will be displayed on the front page of your blog
+display_categories: ["Fiche technique", "Tutoriel", "Développement"]
+ # these categories will be displayed on the front page of your blog
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar
 # -----------------------------------------------------------------------------
+# Jekyll Scholar is a plugin for managing and displaying bibliographies in Jekyll.
+# It uses BibTeX files to generate HTML pages for each entry in the bibliography.
+# You can use it to create a bibliography page, display citations in your posts, and more.
 
 scholar:
-  last_name: [Einstein]
-  first_name: [Albert, A.]
-
+  last_name: [Zovi]
+  first_name: [Lionel, L.]
   style: apa
-  locale: en
-
-  source: /_bibliography/
-  bibliography: papers.bib
+  locale: fr                            # pour “10 avril 2025” plutôt que “April 10, 2025”
+  source: /_bibliography/               # dossier où vous placerez paper1.bib, paper2.bib…
+  bibliography: papers.bib              # fichier principal
   bibliography_template: bib
-  # Note: if you have latex math in your bibtex, the latex filter
-  # preprocessing may conflict with MathJAX if the latter is enabled.
-  # See https://github.com/alshedivat/al-folio/issues/357.
-  bibtex_filters: [latex, smallcaps, superscript]
-
+  bibtex_filters: [latex, smallcaps]
   replace_strings: true
   join_strings: true
-
-  details_dir: bibliography
-  details_link: Details
-
-  query: "@*"
   group_by: year
   group_order: descending
 
-# Display different badges withs stats for your publications
-# Customize badge behavior in _layouts/bib.liquid
 enable_publication_badges:
-  altmetric: true # Altmetric badge (Customization options: https://badge-docs.altmetric.com/index.html)
-  dimensions: true # Dimensions badge (Customization options: https://badge.dimensions.ai/)
-  google_scholar: true # Google Scholar badge (https://scholar.google.com/intl/en/scholar/citations.html)
-  inspirehep: true # Inspire HEP badge (https://help.inspirehep.net/knowledge-base/citation-metrics/)
+  altmetric: false                     # désactivez ceux qui ne vous concernent pas
+  dimensions: false
+  google_scholar: false
+  inspirehep: false
 
-# Filter out certain bibtex entry keywords used internally from the bib output
-filtered_bibtex_keywords:
-  [
-    abbr,
-    abstract,
-    additional_info,
-    altmetric,
-    annotation,
-    arxiv,
-    award,
-    award_name,
-    bibtex_show,
-    blog,
-    code,
-    google_scholar_id,
-    html,
-    inspirehep_id,
-    pdf,
-    poster,
-    preview,
-    selected,
-    slides,
-    supp,
-    video,
-    website,
-  ]
+max_author_limit: 3
+enable_publication_thumbnails: false
 
-# Maximum number of authors to be shown for each publication (more authors are visible on click)
-max_author_limit: 3 # leave blank to always show all authors
-more_authors_animation_delay: 10 # more authors are revealed on click using animation; smaller delay means faster animation
-
-# Enables publication thumbnails. If disabled, none of the publications will display thumbnails, even if specified in the bib entry.
-enable_publication_thumbnails: true
 
 # -----------------------------------------------------------------------------
 # Jekyll Link Attributes
@@ -362,6 +350,7 @@ imagemagick:
     - ".png"
     - ".tiff"
     - ".gif"
+    - ".webp"
   output_formats:
     webp: "-quality 85"
 
