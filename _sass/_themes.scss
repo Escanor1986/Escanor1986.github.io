@@ -4,16 +4,34 @@
 
 @use "sass:color";
 
+// Cyberpunk/Neon theme variables - shared between light and dark
+$cyber-accent: #08f7fe;         // cyan néon
+$cyber-accent-alt: #fe53bb;     // magenta néon
+$cyber-organic: #66fcf1;        // vert clair
+$cyber-red: #e23e57;            // rouge sakura
+
 :root {
   color-scheme: light;
-  --global-bg-color: #{$white-color};
-  --global-code-bg-color: #{$code-bg-color-light};
-  --global-text-color: #{$black-color};
-  --global-text-color-light: #{$grey-color};
-  --global-theme-color: #{$purple-color};
-  --global-hover-color: #{$purple-color};
+  
+  // Base colors - Light Mode
+  --global-bg-color: #f8f9fa;
+  --global-sidebar-bg-color: #e9ecef;
+  --global-code-bg-color: rgba(224, 168, 250, 0.1);
+  --global-text-color: #343a40;
+  --global-text-color-light: #495057;
+  
+  // Cyber theme colors - Light Mode
+  --global-theme-color: #9932cc;           // purple (adaptation of neon)
+  --global-hover-color: #7b28a4;           // darker purple
   --global-hover-text-color: #{$white-color};
-  --global-footer-bg-color: #{$grey-color-dark};
+  --global-accent-color: #9932cc;          // purple accent
+  --global-accent-color-alt: #c71585;      // magenta accent
+  --global-organic-color: #20b2aa;         // teal accent
+  --global-inline-code-bg: rgba(224, 34, 34, 0.08);
+  --global-inline-code-text: #c71585;
+  
+  // Structure colors - Light Mode
+  --global-footer-bg-color: #343a40;
   --global-footer-text-color: #{$grey-color-light};
   --global-footer-link-color: #{$white-color};
   --global-distill-app-color: #{$grey-color};
@@ -30,6 +48,11 @@
   --global-newsletter-bg-color: #{$white-color};
   --global-newsletter-text-color: #{$black-color};
 
+  // Font settings
+  --body-font-family: "Inter", system-ui, -apple-system, "Segoe UI", "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+  --mono-font-family: "Major Mono Display", Menlo, Consolas, monospace;
+
+  // Block settings
   --global-tip-block: #42b983;
   --global-tip-block-bg: #e2f5ec;
   --global-tip-block-text: #215d42;
@@ -43,28 +66,26 @@
   --global-danger-block-text: #600;
   --global-danger-block-title: #c00;
 
+  // Toggle display
   #light-toggle-system {
     padding-left: 10px;
     padding-top: 12px;
     display: block;
   }
-
   #light-toggle-dark {
     display: none;
   }
-
   #light-toggle-light {
     display: none;
   }
-
   .only-light {
     display: block;
   }
-
   .only-dark {
     display: none;
   }
 
+  // Back to top button
   #back-to-top {
     color: var(--global-back-to-top-text-color);
     background: var(--global-back-to-top-bg-color);
@@ -76,68 +97,76 @@
   }
 }
 
+// Dark mode - Cyberpunk Theme
 html[data-theme="dark"] {
   color-scheme: dark;
-  --global-bg-color: #{$grey-color-dark};
-  --global-code-bg-color: #{$code-bg-color-dark};
-  --global-text-color: #{$grey-color-light};
-  --global-text-color-light: #{$grey-color};
-  --global-theme-color: #{$cyan-color};
-  --global-hover-color: #{$cyan-color};
-  --global-hover-text-color: #{$white-color};
-  --global-footer-bg-color: #{$grey-color-light};
-  --global-footer-text-color: #{$grey-color-dark};
-  --global-footer-link-color: #{$black-color};
+  
+  // Base colors - Dark Mode
+  --global-bg-color: #0b0c10;            // dark blue-black
+  --global-sidebar-bg-color: #131415;    // dark sidebar
+  --global-code-bg-color: #1f2833;       // dark code bg
+  --global-text-color: #c5c6c7;          // light gray text
+  --global-text-color-light: #adb5bd;    // lighter gray
+  
+  // Cyber theme colors - Dark Mode
+  --global-theme-color: #{$cyber-accent};       // cyan neon
+  --global-hover-color: #{$cyber-organic};      // teal-green
+  --global-hover-text-color: #{$black-color};
+  --global-accent-color: #{$cyber-accent};      // cyan neon
+  --global-accent-color-alt: #{$cyber-accent-alt}; // magenta neon
+  --global-organic-color: #{$cyber-organic};    // teal-green
+  --global-inline-code-bg: rgba(238, 34, 34, 0.1);
+  --global-inline-code-text: #{$cyber-red};
+  
+  // Structure colors - Dark Mode
+  --global-footer-bg-color: #171a1d;      // very dark footer
+  --global-footer-text-color: #c5c6c7;    // light text
+  --global-footer-link-color: #{$cyber-accent};
   --global-distill-app-color: #{$grey-color-light};
-  --global-divider-color: #424246;
-  --global-card-bg-color: #{$grey-900};
-  --global-back-to-top-bg-color: rgba(
-    #{color.channel($white-color, "red", $space: rgb)},
-    #{color.channel($white-color, "green", $space: rgb)},
-    #{color.channel($white-color, "blue", $space: rgb)},
-    0.5
-  );
+  --global-divider-color: #2c3e50;         // divider color
+  --global-card-bg-color: #1f2833;         // card background
+  --global-highlight-color: #{$cyber-accent-alt};
+  --global-back-to-top-bg-color: rgba(8, 247, 254, 0.5);
   --global-back-to-top-text-color: #{$black-color};
-  --global-newsletter-bg-color: #{$grey-color-light};
-  --global-newsletter-text-color: #{$grey-color-dark};
+  --global-newsletter-bg-color: #1f2833;
+  --global-newsletter-text-color: #c5c6c7;
 
-  --global-tip-block: #42b983;
-  --global-tip-block-bg: #e2f5ec;
-  --global-tip-block-text: #215d42;
-  --global-tip-block-title: #359469;
-  --global-warning-block: #e7c000;
-  --global-warning-block-bg: #fff8d8;
-  --global-warning-block-text: #6b5900;
-  --global-warning-block-title: #b29400;
-  --global-danger-block: #c00;
-  --global-danger-block-bg: #ffe0e0;
-  --global-danger-block-text: #600;
-  --global-danger-block-title: #c00;
+  // Block settings
+  --global-tip-block: #{$cyber-organic};
+  --global-tip-block-bg: rgba(102, 252, 241, 0.15);
+  --global-tip-block-text: #c5c6c7;
+  --global-tip-block-title: #{$cyber-organic};
+  --global-warning-block: #f0ad4e;
+  --global-warning-block-bg: rgba(240, 173, 78, 0.15);
+  --global-warning-block-text: #c5c6c7;
+  --global-warning-block-title: #f0ad4e;
+  --global-danger-block: #{$cyber-accent-alt};
+  --global-danger-block-bg: rgba(254, 83, 187, 0.15);
+  --global-danger-block-text: #c5c6c7;
+  --global-danger-block-title: #{$cyber-accent-alt};
 
+  // Toggle visibility
   .only-light {
     display: none;
   }
-
   .only-dark {
     display: block;
   }
 }
 
+// Theme setting overrides
 html[data-theme-setting="dark"] {
   #light-toggle-system {
     display: none;
   }
-
   #light-toggle-dark {
     padding-left: 10px;
     padding-top: 12px;
     display: block;
   }
-
   #light-toggle-light {
     display: none;
   }
-
   #back-to-top {
     color: var(--global-back-to-top-text-color);
     background: var(--global-back-to-top-bg-color);
@@ -148,11 +177,9 @@ html[data-theme-setting="light"] {
   #light-toggle-system {
     display: none;
   }
-
   #light-toggle-dark {
     display: none;
   }
-
   #light-toggle-light {
     padding-left: 10px;
     padding-top: 12px;
