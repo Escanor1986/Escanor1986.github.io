@@ -1,213 +1,108 @@
-# al-folio (Lionel Zovi’s Personal Portfolio)
+# Portfolio de Lionel Zovi
 
 <div align="center">
 
-[![Live demo](https://escanor1986.github.io/al-folio/)](https://escanor1986.github.io/al-folio/)
+[![Portfolio en ligne](https://img.shields.io/badge/Portfolio-En_ligne-brightgreen)](https://escanor1986.github.io/)
 
-**A simple, clean, responsive [Jekyll](https://jekyllrb.com/) theme for academics, customized for Lionel Zovi.**
+**Portfolio professionnel de Lionel Zovi, Développeur Fullstack Java/Angular**
 
 ---
 
-[![Deploy to GitHub Pages](https://github.com/Escanor1986/al-folio/actions/workflows/deploy.yml/badge.svg)](https://github.com/Escanor1986/al-folio/actions/workflows/deploy.yml)  
-[![GitHub stars](https://img.shields.io/github/stars/Escanor1986/al-folio.svg)](https://github.com/Escanor1986/al-folio/stargazers)  
-[![GitHub forks](https://img.shields.io/github/forks/Escanor1986/al-folio.svg)](https://github.com/Escanor1986/al-folio/network)  
-[![License: MIT](https://img.shields.io/github/license/alshedivat/al-folio.svg)](LICENSE)
+[![Déploiement GitHub Pages](https://github.com/Escanor1986/Escanor1986.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/Escanor1986/Escanor1986.github.io/actions/workflows/deploy.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Last Commit](https://img.shields.io/github/last-commit/Escanor1986/Escanor1986.github.io)](https://github.com/Escanor1986/Escanor1986.github.io/commits)
+[![GitHub repo size](https://img.shields.io/github/repo-size/Escanor1986/Escanor1986.github.io)](https://github.com/Escanor1986/Escanor1986.github.io)
 
 </div>
 
 ---
 
-## Table of Contents
+## À propos de ce portfolio
 
-- [al-folio (Lionel Zovi’s Personal Portfolio)](#al-folio-lionel-zovis-personal-portfolio)
-  - [Table of Contents](#table-of-contents)
-  - [Introduction](#introduction)
-  - [Getting Started](#getting-started)
-  - [Installation \& Deployment](#installation--deployment)
-    - [Prerequisites](#prerequisites)
-    - [Local preview](#local-preview)
-    - [GitHub Pages](#github-pages)
-  - [Customization](#customization)
-  - [Features](#features)
-  - [Lighthouse PageSpeed Insights](#lighthouse-pagespeed-insights)
-    - [Desktop](#desktop)
-    - [Mobile](#mobile)
-  - [Troubleshooting](#troubleshooting)
-    - [Removed obsolete converters](#removed-obsolete-converters)
-    - [Prettier \& Liquid plugin](#prettier--liquid-plugin)
-    - [Unknown tag `toc`](#unknown-tag-toc)
-  - [FAQ](#faq)
-  - [Contributing](#contributing)
-  - [License](#license)
+Ce site présente mon parcours professionnel et mes compétences en développement web :
 
----
+- 👨‍💻 **À propos** - Mon profil, parcours et compétences  
+- 📄 **CV** - Mon parcours professionnel et ma formation
+- 🚀 **Projets** - Mes réalisations techniques
+- 📝 **Blog** - Articles techniques et tutoriels sur le développement
+- 📊 **Repositories** - Mes contributions GitHub
 
-## Introduction
+## Technologies maîtrisées
 
-This repository is a customized fork of **al-folio**, adapted for **Lionel Zovi**’s personal academic portfolio:
+<div align="center">
 
-- ✅ Personal **About** page with photo, contact info, CV download  
-- ✅ Interactive **CV** generated from YAML or JSON  
-- ✅ **Publications** from BibTeX  
-- ✅ **Projects**, **News**, **Blog** sections  
-- 🎨 Light & Dark mode, theme color presets  
-- ⚙️ CI checks: Prettier, broken-link checks, optional Axe accessibility
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Spring](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
+![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![SASS](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 
----
+</div>
 
-## Getting Started
+- **Frontend**: Angular, TypeScript, React, JavaScript, HTML5, CSS3/SCSS
+- **Backend**: Java, Spring Boot, Node.js
+- **DevOps**: Docker, Kubernetes, CI/CD
+- **Base de données**: MongoDB, PostgreSQL
+- **Autres**: Microservices, API REST, Cloud
 
-1. **Fork** or clone this repo:  
-   ```bash
-   git clone https://github.com/Escanor1986/al-folio.git
-   cd al-folio
-   ```
+## Blog
 
-2. **Create** a `gh-pages` branch for GitHub Pages deployment (the theme’s default CI action publishes from `gh-pages`):
+<div align="center">
+  
+[![Blog Articles](https://img.shields.io/badge/Blog-Articles_Techniques-orange?style=for-the-badge)](https://escanor1986.github.io/blog/)
+  
+</div>
 
-   ```bash
-   git checkout -b gh-pages
-   git push --set-upstream origin gh-pages
-   ```
+Je partage régulièrement des articles techniques sur :
+- 📚 JavaScript moderne et asynchrone
+- 🅰️ Angular et React
+- 🔄 Bonnes pratiques DevOps
+- 🌐 Architecture microservices
+- 💡 Retours d'expérience sur des projets
 
-3. **Switch** back to `main` for editing:
+### Derniers articles
+- [Comprendre le mot-clé 'this' en JavaScript](https://escanor1986.github.io/blog/2024/08/22/comprendre-mot-clef-this/)
+- [Comprendre l'asynchrone en JavaScript](https://escanor1986.github.io/blog/2024/09/15/comprendre-asynchrone-javascript/)
+- [Next.js Image avec Storybook et TypeScript](https://escanor1986.github.io/blog/2024/12/01/next-image-storybook-typescript/)
 
-   ```bash
-   git checkout main
-   ```
+## Contact
 
----
+Pour me contacter :
+- 📧 Email : lionel.zovi@gmail.com
+- 🔗 LinkedIn : [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin)](https://www.linkedin.com/in/lionel-zovi/)
+- 🐙 GitHub : [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat&logo=github)](https://github.com/Escanor1986)
 
-## Installation & Deployment
+## Statistiques GitHub
 
-### Prerequisites
+<div align="center">
+  
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Escanor1986&layout=compact&theme=dark)](https://github.com/Escanor1986)
+[![Lionel's GitHub stats](https://github-readme-stats.vercel.app/api?username=Escanor1986&show_icons=true&theme=dark)](https://github.com/Escanor1986)
 
-- Ruby ≥ 3.2, Bundler  
-- Node.js & npm  
+</div>
 
-### Local preview
+## Crédits
 
-```bash
-bundle install
-npm install
-bundle exec jekyll serve
-```
+Ce portfolio utilise le thème Jekyll [al-folio](https://github.com/alshedivat/al-folio), personnalisé pour correspondre à mon profil professionnel.
 
-Browse [http://localhost:4000](http://localhost:4000).
-
-### GitHub Pages
-
-This repo uses the official `deploy.yml` Action, which:
-
-- Builds the site on `main` changes  
-- Publishes the generated `_site/` to the **gh-pages** branch  
-
-Make sure your Pages settings point at the `gh-pages` branch.
-
----
-
-## Customization
-
-All configuration lives in `_config.yml`.  
-Key files/directories:
-
-- `_data/cv.yml` or `assets/json/resume.json` — your CV  
-- `_data/repositories.yml` — GitHub repos/users  
-- `_bibliography/papers.bib` — publications  
-- `_pages/` — About, Teaching, Repositories, CV, People, etc.  
-- `_layouts/`, `_includes/`, `_sass/` — theme code  
-
-See [CUSTOMIZE.md](CUSTOMIZE.md) for detailed tips.
-
----
-
-## Features
-
-- 🌗 **Light & Dark mode** auto-detect + toggle  
-- 📄 **CV**: JSONResume fallback to YAML (`_data/cv.yml`)  
-- 🧑‍💼 **People** profiles page  
-- 📚 **Publications** from BibTeX with buttons (PDF, code, slides…)  
-- 📂 **Collections**: News, Projects (and add your own)  
-- ✍️ **Distill-style posts**, MathJax, Mermaid, Chart.js, TikZ  
-- 📸 **Photos**, 🎥 **Video**, 🔊 **Audio** embeds  
-- 📈 **GitHub stats** & trophies on `/repositories/`  
-- 🌈 **Theming** via `_sass/_themes.scss`  
-- 🐛 **CI checks**: Prettier, lychee (broken links), Axe (manual)  
-
----
-
-## Lighthouse PageSpeed Insights
-
-### Desktop
-
-[![Google Lighthouse PageSpeed Insights](lighthouse_results/desktop/pagespeed.svg)](https://htmlpreview.github.io/?https://github.com/Escanor1986/al-folio/blob/gh-pages/lighthouse_results/desktop/escanor1986_github_io_al_folio_.html)
-
-Run the test yourself:  
-[Google Lighthouse PageSpeed Insights (Desktop)](https://pagespeed.web.dev/report?url=https%3A%2F%2Fescanor1986.github.io%2Fal-folio%2F&form_factor=desktop)
-
-### Mobile
-
-[![Google Lighthouse PageSpeed Insights](lighthouse_results/mobile/pagespeed.svg)](https://htmlpreview.github.io/?https://github.com/Escanor1986/al-folio/blob/gh-pages/lighthouse_results/mobile/escanor1986_github_io_al_folio_.html)
-
-Run the test yourself:  
-[Google Lighthouse PageSpeed Insights (Mobile)](https://pagespeed.web.dev/report?url=https%3A%2F%2Fescanor1986.github.io%2Fal-folio%2F&form_factor=mobile)
-
----
-
-## Troubleshooting
-
-### Removed obsolete converters
-
-We’ve dropped:
-
-- `jekyll-imagemagick`  
-- `jekyll-jupyter-notebook`
-
-Make sure your **Gemfile** no longer lists them.  
-If you see errors about **“jupyter: No such file”**, remove the plugin and run:
-
-```bash
-bundle install
-```
-
-### Prettier & Liquid plugin
-
-If `npx prettier --write` errors on
-`@shopify/prettier-plugin-liquid`, ensure you’ve run:
-
-```bash
-npm install --save-dev prettier @shopify/prettier-plugin-liquid
-```
-
-### Unknown tag `toc`
-
-If you remove `jekyll-toc`, delete all `{% toc %}` occurrences or add
-
-```yaml
-plugins:
-  - jekyll-toc
-```
-
-to your `_config.yml`.
-
----
-
-## FAQ
-
-See [FAQ.md](FAQ.md) for common questions on deployment, custom domains, Plugins, etc.
-
----
-
-## Contributing
-
-Bug reports and PRs welcome! 🛠️  
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
----
+<div align="center">
+  
+![Visitors](https://visitor-badge.laobi.icu/badge?page_id=Escanor1986.Escanor1986.github.io)
+![Built with Jekyll](https://img.shields.io/badge/Built_with-Jekyll-CC0000?logo=jekyll)
+![Hosted on GitHub Pages](https://img.shields.io/badge/Hosted_on-GitHub_Pages-181717?logo=github)
+  
+</div>
 
 ## License
 
-This project is MIT-licensed. See [LICENSE](LICENSE).
-
-Original **al-folio** theme by alshedivat under MIT.  
-This fork maintained by Lionel Zovi.  
+Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
