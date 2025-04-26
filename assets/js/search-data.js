@@ -44,8 +44,8 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/veille/";
           },
-        },{id: "nav-mentorat-amp-partage",
-          title: "Mentorat &amp; Partage",
+        },{id: "nav-teaching",
+          title: "Teaching",
           description: "Mon approche du partage de connaissances et mes ressources préférées en développement web.",
           section: "Navigation",
           handler: () => {
@@ -105,11 +105,16 @@ ninja.data = [{
             window.location.href = "/blog/2024/08/22/comprendre-mot-clef-this/";
           
         },
-      },{id: "books-the-godfather",
-          title: 'The Godfather',
+      },{id: "books-l-39-alchimiste",
+          title: 'L&amp;#39;Alchimiste',
           description: "",
           section: "Books",handler: () => {
-              window.location.href = "/books/the_godfather/";
+              window.location.href = "/books/alchimiste/";
+            },},{id: "books-javascript-the-definitive-guide",
+          title: 'JavaScript - The Definitive Guide',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/javascript_definitive_guide/";
             },},{id: "projects-project-1",
           title: 'project 1',
           description: "with background image",
