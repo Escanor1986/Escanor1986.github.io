@@ -1,81 +1,112 @@
 ---
 layout: page
-title: project 3 with very long name
-description: a project that redirects to another website
-img: assets/img/7.jpg
-redirect: https://unsplash.com
+title: Chemin de conscience
+img: assets/img/conscience.png
+description: Next.js fullstack website for a non-profit
 importance: 3
 category: work
+giscus_comments: true
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+## Links & Resources
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Live Demo</h5>
+        <p class="card-text">Experience the application in action through the live deployment.</p>
+        <a href="https://www.cheminsdeconscience.com/" target="_blank" class="btn btn-success">
+          <i class="fas fa-external-link-alt"></i> Launch Application
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+## Description
+
+Fullstack website for the Chemins de Conscience A.S.B.L. association developed with Next.js, TypeScript, and Tailwind CSS.
+
+This professional web platform provides a complete digital showcase for an association, integrating modern features through a robust technical stack centered on Next.js.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/conscience.png" title="Chemins de Conscience website homepage" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
+    Main interface of the Chemins de Conscience website, featuring a clean and elegant design suited to the spirit of the association.
 </div>
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+The application is built on a modern architecture using the latest web technologies to ensure optimal performance and exceptional user experience. The site combines an elegant frontend with a secure backend and an SQL database for a complete solution.
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+Key features include:
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+- **Interactive image carousel** with smooth transitions
+- **Powerful search system** throughout the site content
+- **Media management** with optimized image display and integrated video player
+- **Secure administration interface** for content management
+
+Several technical optimizations have been implemented:
+
+- **Image Optimization** via Next.js to reduce loading times
+- **Automatic Code Splitting** to load only necessary code
+- **Intelligent Prefetching** for instant navigation
+- **Optimized SEO** with dynamic metadata and structured data
+
+The site is deployed on Vercel with continuous integration from GitHub, automatic SSL certificates, and a global CDN for optimal performance worldwide.
 
 {% raw %}
+```tsx
+// Example of a Next.js component with TypeScript and Tailwind
+import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+import { Event } from '@/types/event';
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
+interface EventCardProps {
+  event: Event;
+  priority?: boolean;
+}
+
+const EventCard: React.FC<EventCardProps> = ({ event, priority = false }) => {
+  const router = useRouter();
+  const [isHovered, setIsHovered] = useState(false);
+  
+  const navigateToEventDetail = () => {
+    router.push(`/events/${event.slug}`);
+  };
+  
+  return (
+    <div 
+      className="relative rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl bg-white"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onClick={navigateToEventDetail}
+    >
+      <div className="relative h-48 w-full">
+        <Image
+          src={event.coverImage || '/images/default-event.jpg'}
+          alt={event.title}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className={`object-cover transition-transform duration-500 ${isHovered ? 'scale-105' : 'scale-100'}`}
+          priority={priority}
+        />
+      </div>
+      <div className="p-4">
+        <span className="inline-block px-3 py-1 text-sm font-semibold text-teal-800 bg-teal-100 rounded-full mb-2">
+          {new Date(event.date).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })}
+        </span>
+        <h3 className="text-xl font-bold mb-2 text-gray-800">{event.title}</h3>
+        <p className="text-gray-600 line-clamp-2">{event.shortDescription}</p>
+      </div>
+    </div>
+  );
+};
+
+export default EventCard;
 ```
 
 {% endraw %}

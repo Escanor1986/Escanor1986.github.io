@@ -1,80 +1,153 @@
 ---
 layout: page
-title: project 5
-description: a project with a background image
-img: assets/img/1.jpg
+title: Waver
+img: assets/img/waver.png
+description: Twitter-inspired social network
 importance: 3
-category: fun
+category: work
+giscus_comments: true
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+# Links & Resources
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Source Code</h5>
+        <p class="card-text">Check out the complete source code and documentation on GitHub.</p>
+        <a href="https://github.com/Escanor1986/WaveTides" target="_blank" class="btn btn-primary">
+          <i class="fab fa-github"></i> View Repository
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Live Demo</h5>
+        <p class="card-text">Experience the application in action through the live deployment.</p>
+        <a href="https://waver-493c140e7e9c.herokuapp.com/auth/signin/form" target="_blank" class="btn btn-success">
+          <i class="fas fa-external-link-alt"></i> Launch Application
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+## Description
+
+Microblogging social network inspired by Twitter, developed with Node.js, Express, Pug, and Bootstrap 5 for a dynamic and responsive social experience.
+
+Waver is a platform that allows users to share concise thoughts, follow other users, and interact with a personalized news feed.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/waver.png" title="Waver interface" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
+    Main interface of Waver, showing the news feed and social interaction features.
 </div>
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+Waver uses a server-side rendering stack for optimal performance, combining Node.js and Express for the backend, Pug as a template engine, and Bootstrap 5 for a responsive interface. Dynamic interactions are managed by client-side JavaScript and Socket.io for real-time notifications.
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+The application offers a complete range of social features:
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+- **User management** with secure authentication
+- **Publications ("Waves")** with text, images, and hashtags
+- **Personalized news feed** based on subscriptions
+- **Private messaging** between users
+
+Several notable technical aspects have been implemented:
+
+- **Protection against injections** and XSS for enhanced security
+- **Caching** of frequent requests to optimize performance
+- **Modular middlewares** for a reusable server architecture
+- **Pagination** to efficiently handle large amounts of data
+
+The application is deployed on Heroku with automated CI/CD via GitHub, MongoDB Atlas for the database, and Cloudinary for image storage.
 
 {% raw %}
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
+```javascript
+// Extract from the posts controller
+const Post = require('../models/postModel');
+const User = require('../models/userModel');
+const catchAsync = require('../utils/catchAsync');
+const AppError = require('../utils/appError');
+
+exports.createPost = catchAsync(async (req, res, next) => {
+  // Extract hashtags from content
+  const hashtagRegex = /#[a-zA-Z0-9_]+/g;
+  const hashtags = req.body.content.match(hashtagRegex) || [];
+  
+  // Create the post
+  const newPost = await Post.create({
+    content: req.body.content,
+    author: req.user._id,
+    hashtags: hashtags.map(tag => tag.substring(1).toLowerCase()),
+    image: req.file ? req.file.path : undefined
+  });
+  
+  // Notify followers via Socket.io
+  const followers = await User.find({ following: req.user._id });
+  followers.forEach(follower => {
+    if (req.io.sockets.connected[follower.socketId]) {
+      req.io.sockets.connected[follower.socketId].emit('new-post', {
+        authorName: req.user.username,
+        authorId: req.user._id,
+        postId: newPost._id
+      });
+    }
+  });
+  
+  res.status(201).render('partials/post', {
+    post: newPost,
+    user: req.user,
+    moment: require('moment')
+  });
+});
+
+// Get news feed
+exports.getFeed = catchAsync(async (req, res, next) => {
+  const page = parseInt(req.query.page) || 1;
+  const limit = 20;
+  const skip = (page - 1) * limit;
+  
+  // MongoDB aggregation for personalized feed
+  const posts = await Post.aggregate([
+    {
+      $match: {
+        $or: [
+          { author: { $in: [...req.user.following, req.user._id] } },
+          { hashtags: { $in: req.user.interests || [] } }
+        ]
+      }
+    },
+    { $sort: { createdAt: -1 } },
+    { $skip: skip },
+    { $limit: limit },
+    {
+      $lookup: {
+        from: 'users',
+        localField: 'author',
+        foreignField: '_id',
+        as: 'authorDetails'
+      }
+    },
+    { $unwind: '$authorDetails' }
+  ]);
+  
+  res.status(200).render('feed', {
+    title: 'Your Feed',
+    posts,
+    user: req.user,
+    moment: require('moment'),
+    currentPage: page,
+    hasMore: posts.length === limit
+  });
+});
 ```
 
 {% endraw %}

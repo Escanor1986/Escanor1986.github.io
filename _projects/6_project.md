@@ -1,80 +1,166 @@
 ---
 layout: page
-title: project 6
-description: a project with no image
-img:
+title: PixCircle
+description: Modern web application with Angular 19
+img: assets/img/pix_circle.png
 importance: 4
 category: fun
+giscus_comments: true
 ---
+# Links & Resources
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Source Code</h5>
+        <p class="card-text">Check out the complete source code and documentation on GitHub.</p>
+        <a href="https://github.com/Escanor1986/PixCircle" target="_blank" class="btn btn-primary">
+          <i class="fab fa-github"></i> View Repository
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Live Demo</h5>
+        <p class="card-text">Experience the application in action through the live deployment.</p>
+        <a href="https://escanor1986.github.io/PixCircle" target="_blank" class="btn btn-success">
+          <i class="fas fa-external-link-alt"></i> Launch Application
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+## Description
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+Responsive web application developed with Angular 19, TypeScript, and SCSS, demonstrating the use of modern framework features to create a fluid and interactive user experience.
+
+PixCircle leverages the latest technologies from the Angular ecosystem to provide a scalable architecture and optimal performance.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/pix_circle.png" title="PixCircle interface" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
+    Main user interface of PixCircle, illustrating the modern design and ergonomics of the application.
 </div>
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+This project leverages the most recent technologies from the Angular world, with a particular focus on new features of Angular 19 such as Standalone Components and Signals for reactive state management.
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+The modular architecture with lazy loading optimizes performance, while the use of TypeScript 5 ensures strict typing and easier maintenance. Modular SCSS styles allow for advanced customization of the user interface.
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+The application integrates several innovative features:
+
+- **Advanced navigation system** with nested routing and animated transitions
+- **Reactive data management** with Signals and RxJS
+- **Optimized performance** with OnPush Change Detection
+- **Advanced UI/UX** with fluid animations and responsive design
+
+The development of PixCircle overcame several technical challenges, notably the migration to Angular 19 with its new APIs and paradigms, as well as the design of a scalable architecture promoting long-term maintainability.
+
+The project benefits from a continuous integration and deployment workflow via GitHub Actions for build and test automation, with deployment on GitHub Pages.
 
 {% raw %}
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
+```typescript
+// Example using Signals in an Angular 19 component
+import { Component, computed, effect, input, signal } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { RouterLink } from "@angular/router";
+import { DataService } from "../../services/data.service";
+import { Item } from "../../models/item.model";
+
+@Component({
+  selector: "app-dashboard",
+  standalone: true,
+  imports: [CommonModule, RouterLink],
+  template: `
+    <div class="dashboard-container">
+      <h1>Dashboard</h1>
+
+      <div class="filters">
+        <button *ngFor="let category of categories()" (click)="selectedCategory.set(category)" [class.active]="selectedCategory() === category">
+          {{ category }}
+        </button>
+      </div>
+
+      <div class="items-grid">
+        <div *ngFor="let item of filteredItems()" class="item-card" [routerLink]="['/items', item.id]">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+          <span class="badge">{{ item.category }}</span>
+        </div>
+      </div>
+
+      <div class="summary">
+        <p>Total items: {{ totalCount() }}</p>
+        <p>Filtered items: {{ filteredItems().length }}</p>
+      </div>
+    </div>
+  `,
+  styleUrls: ["./dashboard.component.scss"],
+})
+export class DashboardComponent {
+  // Using input() replacing @Input()
+  searchTerm = input<string>("");
+
+  // Signals for local state
+  selectedCategory = signal<string>("All");
+  items = signal<Item[]>([]);
+  isLoading = signal<boolean>(true);
+
+  // Value automatically calculated from other signals
+  categories = computed(() => {
+    const uniqueCategories = new Set(this.items().map((item) => item.category));
+    return ["All", ...Array.from(uniqueCategories)];
+  });
+
+  // Reactive filtering of items
+  filteredItems = computed(() => {
+    return this.items().filter((item) => {
+      // Filter by category
+      if (this.selectedCategory() !== "All" && item.category !== this.selectedCategory()) {
+        return false;
+      }
+
+      // Filter by search term
+      if (this.searchTerm() && !item.title.toLowerCase().includes(this.searchTerm().toLowerCase())) {
+        return false;
+      }
+
+      return true;
+    });
+  });
+
+  // Reactive total count
+  totalCount = computed(() => this.items().length);
+
+  constructor(private dataService: DataService) {
+    // Effect to observe changes
+    effect(() => {
+      console.log(`Selected category: ${this.selectedCategory()}`);
+      console.log(`Number of filtered items: ${this.filteredItems().length}`);
+    });
+
+    // Loading data
+    this.loadItems();
+  }
+
+  private async loadItems() {
+    try {
+      const data = await this.dataService.getItems();
+      this.items.set(data);
+    } catch (error) {
+      console.error("Error loading data:", error);
+    } finally {
+      this.isLoading.set(false);
+    }
+  }
+}
 ```
 
 {% endraw %}

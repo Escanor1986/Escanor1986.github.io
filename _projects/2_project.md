@@ -1,81 +1,132 @@
 ---
 layout: page
-title: project 2
-description: a project with a background image and giscus comments
-img: assets/img/3.jpg
+title: Telesport
+img: assets/img/telesport_1.png
+description: Angular sports data visualization application
 importance: 2
 category: work
 giscus_comments: true
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+# Links & Resources
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Source Code</h5>
+        <p class="card-text">Check out the complete source code and documentation on GitHub.</p>
+        <a href="https://github.com/Escanor1986/Telesport" target="_blank" class="btn btn-primary">
+          <i class="fab fa-github"></i> View Repository
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Live Demo</h5>
+        <p class="card-text">Experience the application in action through the live deployment.</p>
+        <a href="https://escanor1986.github.io/Telesport" target="_blank" class="btn btn-success">
+          <i class="fas fa-external-link-alt"></i> Launch Application
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+## Description
+
+Angular application deployed on GitHub Pages with Olympic sports data visualization and interactive statistics tables.
+
+Telesport is a sports data application developed with **Angular** that presents Olympic Games statistics, including medal tables and interactive charts.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/telesport_1.png" title="Telesport main dashboard" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/telesport_2.png" title="Data visualization with charts" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
+    User interface of Telesport showing the main dashboard and graphical data visualizations of Olympic statistics.
 </div>
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+The project leverages several advanced Angular features to provide a smooth and interactive user experience. Data management is fully reactive thanks to the extensive use of Observables and RxJS, allowing real-time updates.
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+The modular architecture with lazy loading optimizes loading performance, while HTTP interceptors and authentication guards ensure application security. Data visualization is made possible through integration with a powerful charting library.
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+The main features include:
+
+- **Angular Routing** with navigation between sections
+- **RxJS data streams** for reactive data management
+- **Interactive charts** for exploring Olympic performance data
+- **Responsive design** optimized for mobile and desktop devices
+
+Advanced techniques were used to ensure optimal performance:
+
+- OnPush Change Detection Strategy
+- Intelligent change detection
+- Complex calculations memoization
+- List virtualization to handle large data volumes
+
+You can explore the application deployed on [GitHub Pages](https://escanor1986.github.io/Telesport) and check the [source code on GitHub](https://github.com/Escanor1986/Telesport).
 
 {% raw %}
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
+```typescript
+// Example of Angular service with reactive data management
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject, Observable, combineLatest } from 'rxjs';
+import { map, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { Medal, Country } from '../models/olympic.model';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class OlympicService {
+  private apiUrl = 'assets/data/olympic-medals.json';
+  private countriesSubject = new BehaviorSubject<string[]>([]);
+  private yearsSubject = new BehaviorSubject<number[]>([]);
+  
+  constructor(private http: HttpClient) {
+    this.loadInitialData();
+  }
+  
+  private loadInitialData(): void {
+    this.http.get<Medal[]>(this.apiUrl).pipe(
+      tap(medals => {
+        const countries = [...new Set(medals.map(m => m.country))];
+        const years = [...new Set(medals.map(m => m.year))];
+        this.countriesSubject.next(countries);
+        this.yearsSubject.next(years);
+      }),
+      shareReplay(1)
+    ).subscribe();
+  }
+  
+  getFilteredMedals(): Observable<Medal[]> {
+    const countries$ = this.countriesSubject.asObservable();
+    const years$ = this.yearsSubject.asObservable();
+    
+    return combineLatest([
+      countries$, 
+      years$, 
+      this.http.get<Medal[]>(this.apiUrl)
+    ]).pipe(
+      map(([selectedCountries, selectedYears, allMedals]) => {
+        return allMedals.filter(medal => 
+          selectedCountries.includes(medal.country) && 
+          selectedYears.includes(medal.year)
+        );
+      })
+    );
+  }
+  
+  // Other service methods...
+}
 ```
 
 {% endraw %}
