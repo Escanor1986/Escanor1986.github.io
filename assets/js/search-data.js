@@ -18,7 +18,7 @@ ninja.data = [{
           },
         },{id: "nav-projects",
           title: "Projects",
-          description: "A growing collection of your cool projects.",
+          description: "A growing collection of my cool projects :-)",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
@@ -115,49 +115,49 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/javascript_definitive_guide/";
-            },},{id: "projects-project-1",
-          title: 'project 1',
-          description: "with background image",
+            },},{id: "projects-odoo-hackathon-2024",
+          title: 'Odoo Hackathon 2024',
+          description: "Cloud-Native web application deployed on GCP",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
-            },},{id: "projects-project-2",
-          title: 'project 2',
-          description: "a project with a background image and giscus comments",
+            },},{id: "projects-telesport",
+          title: 'Telesport',
+          description: "Angular sports data visualization application",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
-            },},{id: "projects-project-3-with-very-long-name",
-          title: 'project 3 with very long name',
-          description: "a project that redirects to another website",
+            },},{id: "projects-chemin-de-conscience",
+          title: 'Chemin de conscience',
+          description: "Next.js fullstack website for a non-profit",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_project/";
-            },},{id: "projects-project-4",
-          title: 'project 4',
-          description: "another without an image",
+            },},{id: "projects-house-way",
+          title: 'House Way',
+          description: "Fullstack vacation rental platform",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_project/";
-            },},{id: "projects-project-5",
-          title: 'project 5',
-          description: "a project with a background image",
+            },},{id: "projects-waver",
+          title: 'Waver',
+          description: "Twitter-inspired social network",
           section: "Projects",handler: () => {
               window.location.href = "/projects/5_project/";
-            },},{id: "projects-project-6",
-          title: 'project 6',
-          description: "a project with no image",
+            },},{id: "projects-pixcircle",
+          title: 'PixCircle',
+          description: "Modern web application with Angular 19",
           section: "Projects",handler: () => {
               window.location.href = "/projects/6_project/";
-            },},{id: "projects-project-7",
-          title: 'project 7',
-          description: "with background image",
+            },},{id: "projects-connect-4-oop-game",
+          title: 'Connect 4 - OOP Game',
+          description: "Connect 4 game developed with TypeScript",
           section: "Projects",handler: () => {
               window.location.href = "/projects/7_project/";
-            },},{id: "projects-project-8",
-          title: 'project 8',
+            },},{id: "projects-online-age-calculator",
+          title: 'Online Age Calculator',
           description: "an other project with a background image and giscus comments",
           section: "Projects",handler: () => {
               window.location.href = "/projects/8_project/";
-            },},{id: "projects-project-9",
-          title: 'project 9',
-          description: "another project with an image 🎉",
+            },},{id: "projects-e-commerce-product-page",
+          title: 'E-commerce Product Page',
+          description: "React, TypeScript, Tailwind, and Storybook",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
             },},{
