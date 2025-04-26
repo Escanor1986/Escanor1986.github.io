@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /teaching/
-title: Mentorat & Partage
+title: Teaching
 description: Mon approche du partage de connaissances et mes ressources préférées en développement web.
 nav: true
 nav_order: 6

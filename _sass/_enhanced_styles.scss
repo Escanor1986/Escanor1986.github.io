@@ -1,0 +1,248 @@
+/* Améliorations visuelles pour les thèmes - À ajouter à _sass/_base.scss ou à créer dans un nouveau fichier _sass/_enhanced_styles.scss */
+
+// Styles communs
+body {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+// Titres différenciés par niveau
+h1, h2, h3, h4, h5, h6 {
+  transition: color 0.3s ease;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.01em;
+}
+
+// Styles pour les listes
+ul:not(.task-list):not(.post-list):not(.pagination):not(.contact-icons):not(.navbar-nav) {
+  list-style-type: none;
+  padding-left: 1.5rem;
+  
+  li {
+    position: relative;
+    margin-bottom: 0.5rem;
+    
+    &::before {
+      position: absolute;
+      left: -1.5rem;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+  }
+}
+
+ol {
+  padding-left: 1.5rem;
+  counter-reset: item;
+  
+  li {
+    position: relative;
+    margin-bottom: 0.5rem;
+    counter-increment: item;
+    
+    &::before {
+      transition: color 0.3s ease;
+    }
+  }
+}
+
+// Blockquotes améliorés (en plus des styles existants)
+blockquote:not(.block-tip):not(.block-warning):not(.block-danger) {
+  border-left-width: 4px;
+  font-style: italic;
+  padding: 1.5rem;
+  background-color: var(--global-bg-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  margin: 2rem 0;
+  border-radius: 0 6px 6px 0;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Amélioration des cards
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+  overflow: hidden;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-title {
+    font-weight: 600;
+  }
+}
+
+// Code inline amélioré
+code {
+  font-family: var(--mono-font-family);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+  background-color: var(--global-inline-code-bg);
+  color: var(--global-inline-code-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+// Liens avec effets de survol progressifs
+a:not(.nav-link):not(.post-title):not(.navbar-brand) {
+  text-decoration: none;
+  position: relative;
+  font-weight: 500;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--global-theme-color);
+    transition: width 0.3s ease;
+  }
+  
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+// Définitions spécifiques au thème Light (Sakura)
+:root {
+  // Titres avec dégradés de couleurs
+  h1 {
+    color: var(--global-theme-color);
+    font-weight: 800;
+  }
+  
+  h2 {
+    color: var(--global-accent-color-alt);
+    font-weight: 700;
+  }
+  
+  h3 {
+    color: color-mix(in srgb, var(--global-theme-color) 80%, var(--global-accent-color-alt) 20%);
+    font-weight: 600;
+  }
+  
+  h4, h5, h6 {
+    color: var(--global-text-color);
+    font-weight: 500;
+  }
+  
+  // Puces décoratives pour listes
+  ul:not(.task-list):not(.post-list):not(.pagination):not(.contact-icons):not(.navbar-nav) li::before {
+    content: '❀';
+    color: var(--global-theme-color);
+    opacity: 0.8;
+  }
+  
+  ol li::before {
+    content: counters(item, ".") " ";
+    color: var(--global-theme-color);
+    font-weight: 600;
+  }
+  
+  // Blockquote avec touche distinctive
+  blockquote:not(.block-tip):not(.block-warning):not(.block-danger) {
+    background-color: rgba(219, 134, 155, 0.05);
+    border-left-color: var(--global-theme-color);
+  }
+  
+  // Selection de texte
+  ::selection {
+    background-color: rgba(219, 134, 155, 0.25);
+    color: var(--global-text-color);
+  }
+}
+
+// Définitions spécifiques au thème Dark (Demon Slayer)
+html[data-theme="dark"] {
+  // Titres avec dégradés de couleurs 
+  h1 {
+    color: var(--global-theme-color);
+    font-weight: 800;
+    text-shadow: 0 0 15px rgba(22, 242, 179, 0.3);
+  }
+  
+  h2 {
+    color: var(--global-accent-color-alt);
+    font-weight: 700;
+  }
+  
+  h3 {
+    color: color-mix(in srgb, var(--global-theme-color) 70%, var(--global-accent-color-alt) 30%);
+    font-weight: 600;
+  }
+  
+  h4, h5, h6 {
+    color: var(--global-text-color);
+    font-weight: 500;
+  }
+  
+  // Puces décoratives pour listes
+  ul:not(.task-list):not(.post-list):not(.pagination):not(.contact-icons):not(.navbar-nav) li::before {
+    content: '›';
+    color: var(--global-theme-color);
+    font-size: 1.5rem;
+    line-height: 0;
+    top: 0.4rem;
+  }
+  
+  ol li::before {
+    content: counters(item, ".") " ";
+    color: var(--global-theme-color);
+    font-weight: 600;
+  }
+  
+  // Blockquote avec touche distinctive
+  blockquote:not(.block-tip):not(.block-warning):not(.block-danger) {
+    background-color: rgba(22, 242, 179, 0.05);
+    border-left-color: var(--global-theme-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  // Cards améliorées
+  .card {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(44, 62, 119, 0.3);
+  }
+  
+  // Selection de texte
+  ::selection {
+    background-color: rgba(22, 242, 179, 0.25);
+    color: var(--global-text-color);
+  }
+}
+
+// Effet de focus sur les articles du blog
+.post-list li {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 1rem;
+  
+  &:hover {
+    transform: translateX(5px);
+    background-color: color-mix(in srgb, var(--global-bg-color) 90%, var(--global-theme-color) 10%);
+  }
+}
+
+// Amélioration du pied de page
+footer.sticky-bottom, footer.fixed-bottom {
+  transition: background-color 0.3s ease;
+  
+  a {
+    font-weight: 500;
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: var(--global-theme-color) !important;
+    }
+  }
+}
