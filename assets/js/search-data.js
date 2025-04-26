@@ -10,42 +10,49 @@ ninja.data = [{
       window.location.href = "/";
     },
   },{id: "nav-blog",
-          title: "blog",
+          title: "Blog",
           description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/blog/";
           },
         },{id: "nav-projects",
-          title: "projects",
+          title: "Projects",
           description: "A growing collection of your cool projects.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
           },
         },{id: "nav-repositories",
-          title: "repositories",
+          title: "Repositories",
           description: "A showcase of my GitHub profile(s) and projects.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/repositories/";
           },
         },{id: "nav-cv",
-          title: "cv",
+          title: "CV",
           description: "This page contains my up-to-date CV, detailing my education, professional experience, technical skills and selected projects. Click “Download CV” to open the PDF version.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "nav-teaching",
-          title: "teaching",
-          description: "Materials for courses you taught. Replace this text with your description.",
+        },{id: "nav-veille",
+          title: "Veille",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/veille/";
+          },
+        },{id: "nav-mentorat-amp-partage",
+          title: "Mentorat &amp; Partage",
+          description: "Mon approche du partage de connaissances et mes ressources préférées en développement web.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/teaching/";
           },
         },{id: "nav-people",
-          title: "people",
+          title: "People",
           description: "Who am i ?",
           section: "Navigation",
           handler: () => {
@@ -181,21 +188,14 @@ ninja.data = [{
         title: 'Medium',
         section: 'Socials',
         handler: () => {
-          window.open("https://medium.com/@lionelzovi", "_blank");
-        },
-      },{
-        id: 'social-rss',
-        title: 'RSS Feed',
-        section: 'Socials',
-        handler: () => {
-          window.open("/feed.xml", "_blank");
+          window.open("https://medium.com/@lionel.zovi", "_blank");
         },
       },{
         id: 'social-stackoverflow',
         title: 'Stackoverflow',
         section: 'Socials',
         handler: () => {
-          window.open("https://stackoverflow.com/users/30368998", "_blank");
+          window.open("https://stackoverflow.com/users/21901092", "_blank");
         },
       },{
         id: 'social-custom_codewars',
