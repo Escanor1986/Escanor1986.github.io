@@ -94,8 +94,8 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # -----------------------------------------------------------------------------
 # Blog
 # -----------------------------------------------------------------------------
-blog_name: "Journal de développement"       # Nom affiché en haut de la page /blog/
-blog_description: "Réflexions, tutoriels et retours d’expérience sur le développement web et DevOps."  
+blog_name: "Development diary"       # Nom affiché en haut de la page /blog/
+blog_description: "Reflections, tutorials and feedback on web development and DevOps."  
 # –> Court résumé sous le titre du blog
 
 # URL des articles

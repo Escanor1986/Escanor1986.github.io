@@ -1,38 +1,38 @@
 ---
 layout: page
 permalink: /veille/
-title: Veille
+title: Technology Watch
 nav: true
 nav_order: 5
 ---
 
-# Ma veille technologique
+# My Technology Watch
 
-Je maintiens une veille technologique sur les dernières tendances et innovations en développement web, JavaScript et frameworks modernes.
+I maintain a technology watch on the latest trends and innovations in web development, JavaScript, and modern frameworks.
 
-## À propos de ce projet
+## About this project
 
-Cette veille technologique a été **entièrement conçue et développée par mes soins** en utilisant :
+This technology watch has been **entirely designed and developed by me** using:
 
-- **Github Actions** pour le déploiement continu
-- **Jekyll** pour la génération du site statique
-- **JavaScript** pour les interactions et fonctionnalités dynamiques
-- **SCSS/CSS** pour le design et les animations personnalisées
-- **HTML5** pour la structure et l'accessibilité
+- **Github Actions** for continuous deployment
+- **Jekyll** for static site generation
+- **JavaScript** for interactions and dynamic functionalities
+- **SCSS/CSS** for design and custom animations
+- **HTML5** for structure and accessibility
 
-J'ai choisi ces technologies pour leur performance, leur flexibilité et pour mettre en pratique les compétences sur lesquelles je réalise ma veille.
+I chose these technologies for their performance, flexibility, and to put into practice the skills on which I maintain my technology watch.
 
 <div class="text-center mt-4 mb-5">
   <a href="https://escanor1986.github.io/veille_techno-OC/" class="btn btn-primary" target="_blank">
-    Consulter ma veille technologique
+    View my technology watch
   </a>
 </div>
 
-## Contenu de la veille
+## Content of the watch
 
-Ma veille couvre plusieurs aspects du développement web moderne :
+My watch covers several aspects of modern web development:
 
-- JavaScript et ses frameworks (React, Vue, Angular)
-- Tendances en développement front-end et back-end
-- Bonnes pratiques et patterns de développement
-- Outils et méthodologies pour améliorer la productivité
+- JavaScript and its frameworks (React, Vue, Angular)
+- Trends in front-end and back-end development
+- Best practices and development patterns
+- Tools and methodologies to improve productivity
