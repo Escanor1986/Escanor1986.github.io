@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /veille/
-title: Technology Watch
+title: Tech Watch
 nav: true
 nav_order: 5
 ---
