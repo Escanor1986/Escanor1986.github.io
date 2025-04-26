@@ -6,7 +6,7 @@ subtitle: <a href='#'>Full-Stack Developer</a> · Liège, Belgium · lionel.zovi
 
 profile:
   align: right
-  image: prof_pic_color.png
+  image: Lionel_cv.webp
   image_circular: false
   more_info: >
     <p><strong>Email:</strong> lionel.zovi@gmail.com</p>
@@ -37,8 +37,8 @@ In every project, I bring analytical rigor, stress management, and meticulous at
 ## Affiliations
 
 - **NX Academy**: Trainer & open-source contributor  
-- **OpenClassrooms**: Full-stack development mentor  
-- **Gembloux Agro-Bio Tech (ULG)**: Former Bio-Engineering student  
+- **OpenClassrooms**: Full-stack development Java Angular  
+- **Gembloux Agro-Bio Tech (ULG)**: First-year Bio-Engineering student  
 - **Sart Tilman (ULG)**: First-year Psychology student  
 
 ## Interests & Values

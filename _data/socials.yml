@@ -22,19 +22,19 @@ github_username: Escanor1986 # your GitHub user name
 # leetcode_id: # your LeetCode id
 linkedin_username: lionelzovi # your LinkedIn user name
 # mastodon_username: # your mastodon instance+username in the format instance.tld/@username
-medium_username: lionelzovi # your Medium username
+medium_username: lionel.zovi # your Medium username
 # orcid_id: # your ORCID ID
 # osf_id: # your OSF ID
 # pinterest_id: # your pinterest id
 # publons_id: # your ID on Publons
 # quora_username: # your Quora username
 # research_gate_profile: # your profile on ResearchGate
-rss_icon: true # set to true to show the RSS icon
+# rss_icon: true # set to true to show the RSS icon
 # scholar_userid: # your Google Scholar ID
 # scopus_id: # your profile on Scopus
 # semanticscholar_id: # your Semantic Scholar ID
 # spotify_id: # your spotify id
-stackoverflow_id: 30368998 # your stackoverflow id
+stackoverflow_id: 21901092 # your stackoverflow id
 # telegram_username: # your Telegram user name
 # unsplash_id: # your unsplash id
 # wechat_qr: # filename of your wechat qr-code saved as an image (e.g., wechat-qr.png if saved to assets/img/wechat-qr.png)
@@ -52,11 +52,11 @@ custom_codewars:
   url: https://www.codewars.com/users/Neo_Monkey_D_Luffy
 
 custom_coderbyte:
-  logo: assets/img/coderbyte.svg       # idem pour Coderbyte
+  logo: assets/img/coderbyte.png       # idem pour Coderbyte
   title: Coderbyte
   url: https://coderbyte.com/profile/Escanor1986
 
 custom_codingame:
-  logo: assets/img/codingame.svg       # idem pour CodinGame
+  logo: assets/img/codingame.png       # idem pour CodinGame
   title: CodinGame
   url: https://www.codingame.com/profile/7f58b437a5ff631eca39d30090c739e14290705

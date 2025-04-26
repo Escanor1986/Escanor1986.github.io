@@ -1,0 +1,25 @@
+/* Style pour les icônes sociales personnalisées */
+.social .contact-icons a svg,
+.social .contact-icons a img,
+.navbar-brand.social a svg,
+.navbar-brand.social a img {
+  width: 3.2rem; /* Même taille que les autres icônes */
+  height: 3.2rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Forcer les SVG à une taille cohérente */
+.social .contact-icons a svg image,
+.navbar-brand.social a svg image {
+  width: 100%;
+  height: 100%;
+}
+
+/* Assurer un espacement cohérent */
+.social .contact-icons a,
+.navbar-brand.social a {
+  display: inline-block;
+  margin-right: 0.5rem;
+}

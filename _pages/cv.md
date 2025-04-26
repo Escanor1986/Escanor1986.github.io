@@ -1,7 +1,7 @@
 ---
 layout: cv
 permalink: /cv/
-title: cv
+title: CV
 nav: true
 nav_order: 5
 cv_pdf: CV_Lionel_ZOVI_Fullstack_Developer_compressed.pdf # you can also use external links here
