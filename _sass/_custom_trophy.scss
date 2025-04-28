@@ -1,0 +1,54 @@
+// Style minimaliste pour les trophées GitHub et statistiques
+// Modifie légèrement l'apparence sans perturber la structure
+
+.repo {
+  // Amélioration visuelle des cartes
+  &.p-2 {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+    }
+  }
+  
+  // Pour les écrans de taille moyenne et grande, garde la règle existante
+  @media (min-width: 768px) {
+    // La règle existante dans _base.scss est "max-width: 50%;"
+    // Pas besoin de l'override, elle fonctionne bien avec la nouvelle structure
+  }
+
+  // Amélioration des images dans les repos
+  img {
+    border-radius: 8px;
+    transition: filter 0.2s ease;
+    
+    &:hover {
+      filter: brightness(1.03);
+    }
+  }
+}
+
+// Ajustements légers pour la grille Bootstrap
+.row {
+  margin-left: -10px;
+  margin-right: -10px;
+  
+  // Assure que les deux cartes ont la même hauteur en desktop
+  @media (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    
+    .col-md-6 {
+      padding-left: 10px;
+      padding-right: 10px;
+      display: flex;
+      
+      .repo {
+        width: 100%;
+      }
+    }
+  }
+}
