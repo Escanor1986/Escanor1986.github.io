@@ -115,6 +115,16 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/javascript_definitive_guide/";
+            },},{id: "projects-châtop-api",
+          title: 'ChâTop API',
+          description: "RESTful API for a secure property rental platform",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/10_project/";
+            },},{id: "projects-spring-tennis-manager",
+          title: 'Spring Tennis Manager',
+          description: "Java Spring Boot application for tennis tournament management",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/11_project/";
             },},{id: "projects-odoo-hackathon-2024",
           title: 'Odoo Hackathon 2024',
           description: "Cloud-Native web application deployed on GCP",
