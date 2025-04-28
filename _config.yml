@@ -35,6 +35,8 @@ repo_trophies:
   enabled: true
   theme_light: flat # https://github.com/ryo-ma/github-profile-trophy
   theme_dark: gitdimmed # https://github.com/ryo-ma/github-profile-trophy
+  count_private: true # set to false to hide private repositories
+  show_icons: true # set to false to hide icons
 
 # -----------------------------------------------------------------------------
 # RSS Feed
